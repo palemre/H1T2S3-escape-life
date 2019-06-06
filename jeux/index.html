@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Escape Life!</title>
+    <meta name="description" content="Jeu sur lequel vous pourrez vous amuser en solo comme en multijoueur! Essayer d'atteindre la sortie avant la fin du temps imparti tout en évitant les pièges lancés par votre patron!">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon.png">    
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="hud">
+        <div class="score">score : 0</div>
+        <div class="timer">Time left : 50 sec</div>
+        <div>
+          <a  class ="menu_underline" href="../index.html">
+            <img class= "menu_button" src="images/arrow.png" alt="Menu">Menu
+          </a>
+        </div>
+      </div>
+      <div class="map">
+        <div class="lane1"></div>
+        <div class="lane2"></div>
+        <div class="lane3"></div>
+        <div class="lane4"></div>
+
+      </div>
+      <div class="buttons">
+        <a class="dossier skill" >
+        </a>
+        <a class="gandalf skill" >
+        </a>
+        <div class="ascenseuroff skill">
+        </div>
+        <div class="alarme skill">
+        </div>
+        <div class="heuresup skill">
+        </div>
+      </div>
+      <div class="gg">
+        <h3>Well done!</h3>
+        <p>world 1</p>
+        <img src="images/victoryMen.png" alt="">
+      </div>
+      <div class="youLose">
+        <h2></h2>
+        <img src="images/menu_game_over.png" alt="">
+        <div class="youLose_text">
+          <a href="#"> <img src="images/fleche.png" alt=""> <p id="reset" >Retry</p> </a>
+          <a href="../index.html"> <img src="images/fleche.png" alt=""> <p>Menu</p> </a>
+        </div>
+      </div>
+      <div id="jumpContainer">
+        <img src="images/tpImg.png" alt="">
+        <img src="images/lifebar4.png" alt="" id="lifebar">
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/app.js">
+    </script>
+  </body>
+</html>

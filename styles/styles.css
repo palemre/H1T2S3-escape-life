@@ -1,0 +1,155 @@
+body{
+  background: url("../images/");
+  margin:0;
+  padding:0;
+  font-family: Gugi, sans-serif;
+}
+.background{
+  position: fixed;
+  top: 0;
+  width:100;
+  height:85vh;
+  filter: blur(4px);
+  z-index: -500;
+}
+
+.box{
+  background: black;
+  border-radius: 100px;
+  border:none;
+  cursor: pointer;
+  box-shadow: 7px 7px 0px black;
+  width: 600px;
+  height: 160px;
+  box-sizing: border-box;
+  padding: 3px;
+}
+
+.box:active{
+  transform: translate(10px, 10px);
+  box-shadow: none;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 100px;
+  overflow: hidden;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.container  {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction:column;
+  transition: 0.5s all ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+  height: 60vh;
+  margin-bottom: 25vh;
+}
+.transition{
+  opacity:0.5;
+  transform:scale(4);
+}
+
+
+h2{
+  font-size: 5em;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  z-index: 100;
+  margin:0;
+  padding:0;
+  letter-spacing: 3px;
+  transition: .5s;
+}
+
+
+h1{
+  font-size: 3em;
+  font-family: Gugi;
+  font-weight: lighter;
+  width:100%;
+  text-align: center;
+}
+
+.life{
+  color: #e84118;
+  font-weight: bold;
+  border: 3px solid #e84118;
+  padding: 5px;
+  margin: 5px;
+}
+
+footer {
+  width: 100%;
+  height: 13.1vh;
+  background-color: black;
+  font-family: Roboto, Arial, sans-serif ;
+  bottom:0;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.footer{
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right{
+  padding-right: 10px;
+}
+
+/* SELECTION DU MODE */
+
+.mode_select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin: auto;
+  width: 600px;
+  margin: 30px;
+}
+
+.mode_select a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 90%;
+  border-radius: 30px;
+  font-size: 4vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.one_player {
+  color: #418DDC;
+  border: 2px solid #418DDC;
+  box-shadow: 0 7px 0 #418DDC;
+}
+.two_player {
+  color: #2FCB45;
+  border: 2px solid #2FCB45;
+  box-shadow: 0 7px 0 #2FCB45;
+}
+.active {
+  box-shadow: none;
+  transform: translate(0, 10px)
+}

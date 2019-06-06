@@ -1,0 +1,451 @@
+/* IMPORTATION DES POLICES */
+
+@font-face {
+	font-family: "arcadeInter";
+	src: url('../font/ARCADE_I.ttf');
+}
+@font-face {
+	font-family: "arcade";
+	src: url('../font/ARCADE_N.ttf');
+}
+
+/* REGLES DE BASE */
+
+body {
+    margin: 0;
+    font-family: "arcade";
+    overflow: hidden;
+}
+
+/* CONSTRUCTION DE LA GRILLE */
+
+.map{
+    overflow: hidden;
+    background: #bcc3c6;
+    margin-top: 50px;
+    border-left: 2px solid #7D3232;
+    border-top: 2px solid #7D3232;
+    border-bottom: 2px solid #7D3232;
+    display: grid;
+    width: 300%;
+    height: 80vh;
+    grid-template-columns: repeat(60, calc(100% / 60));
+    grid-template-rows: 1fr 10px 1fr 10px 1fr 10px 1fr;
+    grid-gap: 0;
+    grid-template-areas:
+        "lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1 lane1"
+        ". . . . . corridor1 . . . . . . . . . . . . . . . . . . . . . . . . . corridor2 . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+        "lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2 lane2"
+        ". . . . corridor3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+        "lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3 lane3"
+        ". . . corridor4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . corridor5 . . . . . . . . . . . . . . . . . . . . . ."
+        "lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4 lane4"
+        ". . . corridor6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+}
+
+.lane1{
+    grid-area: lane1;
+}
+
+.lane2{
+    grid-area: lane2;
+}
+
+.lane3{
+    grid-area: lane3;
+}
+
+.lane4{
+    grid-area: lane4;
+}
+.lane5{
+    grid-area: lane5;
+}
+
+.corridor1 {
+    grid-area: corridor1;
+}
+
+.corridor2 {
+    grid-area: corridor2;
+}
+
+.corridor3 {
+    grid-area: corridor3;
+}
+
+.corridor4 {
+    grid-area: corridor4;
+}
+
+.corridor5 {
+    grid-area: corridor5;
+}
+
+.corridor6 {
+    grid-area: corridor6;
+}
+.corridor7 {
+    grid-area: corridor7;
+}
+.corridor8 {
+    grid-area: corridor8;
+}
+.corridor9 {
+    grid-area: corridor9;
+}
+
+/* AUTRES REGLES DE STYLE */
+
+div[class^=lane], div[class^=corridor]{
+    background: #bcc3c6;
+    position: relative;
+}
+
+div[class^=corridor]{
+    z-index: 1000;
+    position: relative;
+}
+
+div[class^=corridor] img{
+
+}
+
+div[class^=corridor] img:first-of-type{
+    position: absolute;
+    height: 11vh;
+    bottom: 300%;
+}
+
+div[class^=corridor] img:nth-of-type(2){
+    position: absolute;
+    height: 11vh;
+    top: 570%;
+}
+.gg {
+    position: relative;
+    top: 0;
+    background: #DCD654;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-family: 'arcadeInter', sans-serif;
+    z-index: 2500;
+    transition: 0.5s all ease-in-out;
+    opacity: 0;
+		display: none;
+}
+.gg h3
+{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 10vh;
+}
+.gg p
+{
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: 7vh;
+}
+.gg img
+{
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  height: 80%;
+}
+
+.youLose
+{
+		width: 100%;
+		height: 100vh;
+		display: none;
+		position: relative;;
+		z-index: 2000;
+		top: 0;
+}
+
+.youLose img
+{
+	width: 100%;
+	height: 102%;
+}
+.youLose h2
+{
+	position: absolute;
+	top: 5%;
+	left: 1%;
+	color: white;
+}
+.youLose_text
+{
+	font-family: 'arcadeInter', sans-serif;
+	color: white;
+	font-size: 8vh;
+	top: 40%;
+	left: 8%;
+	position: absolute;
+	width: 30%;
+}
+
+.youLose_text a
+{
+	text-decoration: none;
+	color: white;
+}
+
+.youLose_text a img
+{
+	display:none;
+	width:3%;
+	height:7%;
+	left: 2%;
+	position: fixed;
+}
+.youLose_text a:first-of-type img
+{
+	top: 48%
+}
+.youLose_text a:nth-child(2) img
+{
+	top: 68%
+}
+.youLose_text a:hover img
+{
+	display:block;
+}
+.youLose_text a:hover
+{
+	color: #B40B19;
+}
+
+.hud {
+    position: fixed;
+    top: 1%;
+		left: 1%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timerAccelerated {
+    color: red;
+}
+.score {
+    display: inline-block;
+}
+
+
+.menu_button{
+	width:10px;
+	height: 20px;
+}
+.menu_underline{
+	text-decoration:none;
+	display: flex;
+	justify-content:space-between;
+	width: 80px;
+	margin-left: 10px;
+}
+.menu_underline:visited{
+    color: black;
+}
+
+/* RELATIF AUX POUVOIRS */
+
+.folder {
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    animation: folder 0.4s infinite;
+    animation-timing-function: linear;
+    background-image: url('../images/folder.png');
+    background-size: cover;
+    z-index: 2000;
+    margin-top: 35px;
+}
+
+.gandalfPers {
+    width: 65px;
+    height: 90px;
+    position: absolute;
+    bottom: 1.5vh;
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    z-index: 2000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../images/gandalf6.png');
+}
+
+@keyframes folder {
+    0%  {background: url('../images/folder0.png'); background-size: contain; background-repeat: no-repeat;}
+    10%  {background: url('../images/folder1.png'); background-size: contain; background-repeat: no-repeat;}
+    20%  {background: url('../images/folder2.png'); background-size: contain; background-repeat: no-repeat;}
+    30%  {background: url('../images/folder3.png'); background-size: contain; background-repeat: no-repeat;}
+    40%  {background: url('../images/folder4.png'); background-size: contain; background-repeat: no-repeat;}
+    50%  {background: url('../images/folder5.png'); background-size: contain; background-repeat: no-repeat;}
+    60%  {background: url('../images/folder6.png'); background-size: contain; background-repeat: no-repeat;}
+    70%  {background: url('../images/folder7.png'); background-size: contain; background-repeat: no-repeat;}
+    80%  {background: url('../images/folder8.png'); background-size: contain; background-repeat: no-repeat;}
+    100%  {background: url('../images/folder9.png'); background-size: contain; background-repeat: no-repeat;}
+}
+
+@keyframes appear {
+    0%  {background: url('../images/gandalf0.png'); background-size: contain; background-repeat: no-repeat;}
+    16%  {background: url('../images/gandalf1.png'); background-size: contain; background-repeat: no-repeat;}
+    32%  {background: url('../images/gandalf2.png'); background-size: contain; background-repeat: no-repeat;}
+    48%  {background: url('../images/gandalf3.png'); background-size: contain; background-repeat: no-repeat;}
+    64%  {background: url('../images/gandalf4.png'); background-size: contain; background-repeat: no-repeat;}
+    80%  {background: url('../images/gandalf5.png'); background-size: contain; background-repeat: no-repeat;}
+    100%  {background: url('../images/gandalf6.png'); background-size: contain; background-repeat: no-repeat;}
+}
+#jumpContainer
+{
+  position: fixed;
+  bottom: 1%;
+  left: 10px;
+  width: 800px;
+  height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#jumpContainer img:first-of-type
+{
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+#jumpContainer img:nth-child(2)
+{
+  width: 40%;
+	height: 100%;
+	align-self: center;
+}
+.character
+{
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-name: moveRight;
+}
+@keyframes moveRight {
+  0% { background: url("../images/sprite1.png"); background-size: contain; background-repeat: no-repeat;}
+  20% { background: url("../images/sprite2.png"); background-size: contain; background-repeat: no-repeat;}
+  40% { background: url("../images/sprite3.png"); background-size: contain; background-repeat: no-repeat;}
+  60% { background: url("../images/sprite4.png"); background-size: contain; background-repeat: no-repeat;}
+  80% { background: url("../images/sprite5.png"); background-size: contain; background-repeat: no-repeat;}
+  100% { background: url("../images/sprite6.png");background-size: contain; background-repeat: no-repeat;}
+}
+.characterL
+{
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-name: moveLeft;
+}
+@keyframes moveLeft {
+  0% { background: url("../images/spriteL1.png"); background-size: contain; background-repeat: no-repeat;}
+  20% { background: url("../images/spriteL2.png"); background-size: contain; background-repeat: no-repeat;}
+  40% { background: url("../images/spriteL3.png"); background-size: contain; background-repeat: no-repeat;}
+  60% { background: url("../images/spriteL4.png"); background-size: contain; background-repeat: no-repeat;}
+  80% { background: url("../images/spriteL5.png"); background-size: contain; background-repeat: no-repeat;}
+  100% { background: url("../images/spriteL6.png");background-size: contain; background-repeat: no-repeat;}
+}
+.opacity
+{
+  animation-duration: 18s;
+  animation-name: prog;
+}
+@keyframes prog {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+/* RELATIF A L'INTERFACE */
+
+.buttons {
+    width: 25%;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill {
+    width: 12%;
+    height: 5.5vh;
+    border-radius: 100%;
+    border: 4px solid aqua;
+    box-shadow: 1px 3px 0 darkslategrey;
+    cursor: pointer;
+}
+.skill img {
+    width: 100%;
+    height: 100%
+}
+
+.onload {
+    animation: reload 15s linear 1;
+}
+
+@keyframes reload {
+    0% {border: 4px solid darkslategrey;}
+    25% {border-right: 4px solid darkslategrey; border-bottom: 4px solid darkslategrey; border-left: 4px solid darkslategrey; border-top: 4px solid aqua;}
+    50% {border-bottom: 4px solid darkslategrey; border-left: 4px solid darkslategrey; border-top: 4px solid aqua; border-right: 4px solid aqua}
+    75% {border-left: 4px solid darkslategrey; border-top: 4px solid aqua; border-right: 4px solid aqua; border-bottom: 4px solid aqua}
+    100% {border-top: 4px solid aqua; border-right: 4px solid aqua; border-bottom: 4px solid aqua; border-left: 4px solid aqua}
+}
+
+.unactivated {
+    filter: brightness(0.8);
+}
+.dossier {
+    background-image: url('../images/dossier.png');
+    background-position: center;
+    background-size: cover;
+}
+.focus{
+    box-shadow: none;
+    transform: translate(2px, 2px)
+}
+.gandalf {
+    background-image: url('../images/gandalf.png');
+    background-position: center;
+    background-size: cover;
+}
+/* .gandalf:focus{
+    box-shadow: none;
+    transform: translate(2px, 2px)
+} */
+.ascenseuroff {
+    background-image: url('../images/ascenseuroff.png');
+    background-position: center;
+    background-size: cover;
+}
+.ascenseuroff:active{
+    box-shadow: none;
+    transform: translate(2px, 2px)
+}
+.alarme {
+    background-image: url('../images/alarme.png');
+    background-position: center;
+    background-size: cover;
+}
+.alarme:active{
+    box-shadow: none;
+    transform: translate(2px, 2px)
+}
+.heuresup {
+    background-image: url('../images/heuresup.png');
+    background-position: center;
+    background-size: cover;
+}
+.heuresup:active{
+    box-shadow: none;
+    transform: translate(2px, 2px)
+}
